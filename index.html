@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Widget Test</title>
+    </head>
+    <body>
+        <pre id="root"></pre>
+        <script type="text/javascript" src="https://cdn.kustomerapp.com/card-js/latest/kustomer-card.min.js"></script>
+        <script>
+            function handleContext(context) {
+                document.getElementById("root").textContent = JSON.stringify(context?.customer?.attributes?.lastConversation, null, 2);
+            }
+            Kustomer.initialize(context => {
+                handleContext(context);
+                Kustomer.on("context", handleContext);
+            });
+        </script>
+    </body>
+</html>
+Collapse
+
+
+
+
+
+
+
+
